@@ -1,3 +1,5 @@
+//Copyright (c) Penyo. All rights reserved.
+
 #include <stdio.h>
 #include <graphics.h>
 
