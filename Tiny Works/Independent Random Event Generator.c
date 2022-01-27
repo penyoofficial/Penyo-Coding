@@ -1,4 +1,4 @@
-//Copyright (c) Penyo. All rights reserved. 
+//Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +11,7 @@ void Menu(int state)
 {
 	if (state)
 		system("cls");
-	printf("ÇëÊäÈëÐèÒª·¢ÉúÊÂ¼þµÄÐòºÅ£¬È»ºó°´»Ø³µ¼ü¡£\n1. Å×Ó²±Ò\n2. ÖÀÉ«×Ó\n3. ³éÆË¿ËÅÆ\n4. Éú³ÉË«É«ÇòºÅÂë\n5. Éú³ÉÉí·ÝÖ¤ºÅÂë\n");
+	printf("è¯·è¾“å…¥éœ€è¦å‘ç”Ÿäº‹ä»¶çš„åºå·ï¼Œç„¶åŽæŒ‰å›žè½¦é”®ã€‚\n1. æŠ›ç¡¬å¸\n2. æŽ·è‰²å­\n3. æŠ½æ‰‘å…‹ç‰Œ\n4. ç”ŸæˆåŒè‰²çƒå·ç \n5. ç”Ÿæˆèº«ä»½è¯å·ç \n");
 	gets(userInput);
 	switch (userInput[0])
 	{
@@ -21,14 +21,14 @@ void Menu(int state)
 	case '4':Event4Interaction();
 	case '5':Event5Interaction();
 	case 'i':system("cls"); printf("Copyright (c) Penyo. All rights reserved.\n"); system("pause"); Menu(1);
-	default: system("cls"); printf("·Ç·¨²ÎÊý£¡\n"); system("pause"); Menu(1);
+	default: system("cls"); printf("éžæ³•å‚æ•°ï¼\n"); system("pause"); Menu(1);
 	}
 }
 
 int main()
 {
 	system("cls");
-	printf("»¶Ó­Ê¹ÓÃ¶ÀÁ¢Ëæ»úÊÂ¼þÉú³ÉÆ÷£¡\n");
+	printf("æ¬¢è¿Žä½¿ç”¨ç‹¬ç«‹éšæœºäº‹ä»¶ç”Ÿæˆå™¨ï¼\n");
 	Menu(0);
 }
 
@@ -48,8 +48,8 @@ void Event1()
 	Seed();
 	switch (rand() % 2)
 	{
-	case 0:printf("·´Ãæ"); break;
-	case 1:printf("ÕýÃæ");
+	case 0:printf("åé¢"); break;
+	case 1:printf("æ­£é¢");
 	}
 	printf("\t");
 }
@@ -57,20 +57,20 @@ void Event1()
 void Event1Interaction()
 {
 	system("cls");
-	printf("ÇëÊäÈëÄãÒªÅ×µÄÃ¶Êý£¬È»ºóÔÙ°´»Ø³µ¡£\n");
+	printf("è¯·è¾“å…¥ä½ è¦æŠ›çš„æžšæ•°ï¼Œç„¶åŽå†æŒ‰å›žè½¦ã€‚\n");
 	gets(userInput);
 	if (atoi(userInput) > 0 && atoi(userInput) < 65536)
-		printf("½á¹û£º\n");
+		printf("ç»“æžœï¼š\n");
 	else
 	{
 		system("cls");
-		printf("·Ç·¨²ÎÊý£¡\n");
+		printf("éžæ³•å‚æ•°ï¼\n");
 		system("pause");
 		Event1Interaction();
 	}
 	for (int i = 0; i < atoi(userInput); i++)
 		Event1();
-	printf("\n\nÊÇ·ñÒªÔÙ´Î½øÐÐ¸ÃÏî£¿ÇëÊäÈëY²¢°´»Ø³µ¼ü¡£\nÈôÐèÒª·µ»ØÖ÷½çÃæ£¬Ö±½Ó°´»Ø³µ¼ü¼´¿É¡£\n");
+	printf("\n\næ˜¯å¦è¦å†æ¬¡è¿›è¡Œè¯¥é¡¹ï¼Ÿè¯·è¾“å…¥Yå¹¶æŒ‰å›žè½¦é”®ã€‚\nè‹¥éœ€è¦è¿”å›žä¸»ç•Œé¢ï¼Œç›´æŽ¥æŒ‰å›žè½¦é”®å³å¯ã€‚\n");
 	gets(userInput);
 	switch (userInput[0])
 	{
@@ -84,12 +84,12 @@ void Event2()
 	Seed();
 	switch (rand() % 6 + 1)
 	{
-	case 1:printf("Ò»µã"); break;
-	case 2:printf("¶þµã"); break;
-	case 3:printf("Èýµã"); break;
-	case 4:printf("ËÄµã"); break;
-	case 5:printf("Îåµã"); break;
-	case 6:printf("Áùµã");
+	case 1:printf("ä¸€ç‚¹"); break;
+	case 2:printf("äºŒç‚¹"); break;
+	case 3:printf("ä¸‰ç‚¹"); break;
+	case 4:printf("å››ç‚¹"); break;
+	case 5:printf("äº”ç‚¹"); break;
+	case 6:printf("å…­ç‚¹");
 	}
 	printf("\t");
 }
@@ -97,20 +97,20 @@ void Event2()
 void Event2Interaction()
 {
 	system("cls");
-	printf("ÇëÊäÈëÄãÒªÖÀµÄÁ£Êý£¬È»ºóÔÙ°´»Ø³µ¡£\n");
+	printf("è¯·è¾“å…¥ä½ è¦æŽ·çš„ç²’æ•°ï¼Œç„¶åŽå†æŒ‰å›žè½¦ã€‚\n");
 	gets(userInput);
 	if (atoi(userInput) > 0 && atoi(userInput) < 65536)
-		printf("½á¹û£º\n");
+		printf("ç»“æžœï¼š\n");
 	else
 	{
 		system("cls");
-		printf("·Ç·¨²ÎÊý£¡\n");
+		printf("éžæ³•å‚æ•°ï¼\n");
 		system("pause");
 		Event2Interaction();
 	}
 	for (int i = 0; i < atoi(userInput); i++)
 		Event2();
-	printf("\n\nÊÇ·ñÒªÔÙ´Î½øÐÐ¸ÃÏî£¿ÇëÊäÈëY²¢°´»Ø³µ¼ü¡£\nÈôÐèÒª·µ»ØÖ÷½çÃæ£¬Ö±½Ó°´»Ø³µ¼ü¼´¿É¡£\n");
+	printf("\n\næ˜¯å¦è¦å†æ¬¡è¿›è¡Œè¯¥é¡¹ï¼Ÿè¯·è¾“å…¥Yå¹¶æŒ‰å›žè½¦é”®ã€‚\nè‹¥éœ€è¦è¿”å›žä¸»ç•Œé¢ï¼Œç›´æŽ¥æŒ‰å›žè½¦é”®å³å¯ã€‚\n");
 	gets(userInput);
 	switch (userInput[0])
 	{
@@ -126,10 +126,10 @@ void Event3()
 	char cardSuit[5], cardPower[5];
 	switch (cardSuitCode)
 	{
-	case 1:strcpy(cardSuit, "ºÚÌÒ"); break;
-	case 2:strcpy(cardSuit, "·½¿é"); break;
-	case 3:strcpy(cardSuit, "Ã·»¨"); break;
-	case 4:strcpy(cardSuit, "ºìÐÄ");
+	case 1:strcpy(cardSuit, "é»‘æ¡ƒ"); break;
+	case 2:strcpy(cardSuit, "æ–¹å—"); break;
+	case 3:strcpy(cardSuit, "æ¢…èŠ±"); break;
+	case 4:strcpy(cardSuit, "çº¢å¿ƒ");
 	}
 	switch (cardPowerCode)
 	{
@@ -146,8 +146,8 @@ void Event3()
 	case 11:strcpy(cardPower, "J"); break;
 	case 12:strcpy(cardPower, "Q"); break;
 	case 13:strcpy(cardPower, "K"); break;
-	case 14:strcpy(cardPower, "Ð¡Íõ"); break;
-	case 15:strcpy(cardPower, "´óÍõ");
+	case 14:strcpy(cardPower, "å°çŽ‹"); break;
+	case 15:strcpy(cardPower, "å¤§çŽ‹");
 	}
 	if (cardPowerCode < 14)
 		printf("%s%s\t", cardSuit, cardPower);
@@ -158,20 +158,20 @@ void Event3()
 void Event3Interaction()
 {
 	system("cls");
-	printf("ÇëÊäÈëÄãÒª³éµÄÕÅÊý£¬È»ºóÔÙ°´»Ø³µ¡£\n");
+	printf("è¯·è¾“å…¥ä½ è¦æŠ½çš„å¼ æ•°ï¼Œç„¶åŽå†æŒ‰å›žè½¦ã€‚\n");
 	gets(userInput);
 	if (atoi(userInput) > 0 && atoi(userInput) < 65536)
-		printf("½á¹û£º\n");
+		printf("ç»“æžœï¼š\n");
 	else
 	{
 		system("cls");
-		printf("·Ç·¨²ÎÊý£¡\n");
+		printf("éžæ³•å‚æ•°ï¼\n");
 		system("pause");
 		Event3Interaction();
 	}
 	for (int i = 0; i < atoi(userInput); i++)
 		Event3();
-	printf("\n\nÊÇ·ñÒªÔÙ´Î½øÐÐ¸ÃÏî£¿ÇëÊäÈëY²¢°´»Ø³µ¼ü¡£\nÈôÐèÒª·µ»ØÖ÷½çÃæ£¬Ö±½Ó°´»Ø³µ¼ü¼´¿É¡£\n");
+	printf("\n\næ˜¯å¦è¦å†æ¬¡è¿›è¡Œè¯¥é¡¹ï¼Ÿè¯·è¾“å…¥Yå¹¶æŒ‰å›žè½¦é”®ã€‚\nè‹¥éœ€è¦è¿”å›žä¸»ç•Œé¢ï¼Œç›´æŽ¥æŒ‰å›žè½¦é”®å³å¯ã€‚\n");
 	gets(userInput);
 	switch (userInput[0])
 	{
@@ -191,20 +191,20 @@ void Event4()
 void Event4Interaction()
 {
 	system("cls");
-	printf("ÇëÊäÈëÄãÒªÉú³ÉµÄ¸öÊý£¬È»ºóÔÙ°´»Ø³µ¡£\n");
+	printf("è¯·è¾“å…¥ä½ è¦ç”Ÿæˆçš„ä¸ªæ•°ï¼Œç„¶åŽå†æŒ‰å›žè½¦ã€‚\n");
 	gets(userInput);
 	if (atoi(userInput) > 0 && atoi(userInput) < 65536)
-		printf("½á¹û£º\n");
+		printf("ç»“æžœï¼š\n");
 	else
 	{
 		system("cls");
-		printf("·Ç·¨²ÎÊý£¡\n");
+		printf("éžæ³•å‚æ•°ï¼\n");
 		system("pause");
 		Event4Interaction();
 	}
 	for (int i = 0; i < atoi(userInput); i++)
 		Event4();
-	printf("\nÊÇ·ñÒªÔÙ´Î½øÐÐ¸ÃÏî£¿ÇëÊäÈëY²¢°´»Ø³µ¼ü¡£\nÈôÐèÒª·µ»ØÖ÷½çÃæ£¬Ö±½Ó°´»Ø³µ¼ü¼´¿É¡£\n");
+	printf("\næ˜¯å¦è¦å†æ¬¡è¿›è¡Œè¯¥é¡¹ï¼Ÿè¯·è¾“å…¥Yå¹¶æŒ‰å›žè½¦é”®ã€‚\nè‹¥éœ€è¦è¿”å›žä¸»ç•Œé¢ï¼Œç›´æŽ¥æŒ‰å›žè½¦é”®å³å¯ã€‚\n");
 	gets(userInput);
 	switch (userInput[0])
 	{
@@ -231,11 +231,11 @@ int ifleapyear(int year)
 	}
 }
 
-void Event5() //´æÔÚ¾ÖÏÞÐÔ£¡
+void Event5() //å­˜åœ¨å±€é™æ€§ï¼
 {
 	Seed();
-	int bit1 = rand() % 6 + 1; //µÚÒ»Î»£ºµØÇø
-	int bit2; //µÚ¶þÎ»£ºÊ¡
+	int bit1 = rand() % 6 + 1; //ç¬¬ä¸€ä½ï¼šåœ°åŒº
+	int bit2; //ç¬¬äºŒä½ï¼šçœ
 	switch (bit1)
 	{
 	case 1:bit2 = rand() % 5 + 1; break;
@@ -247,15 +247,15 @@ void Event5() //´æÔÚ¾ÖÏÞÐÔ£¡
 		//case 7:bit2 = rand() % 1 + 1; break;
 		//case 8:bit2 = rand() % 2 + 1;
 	}
-	int bit7_10 = rand() % 120 + 1900; //µÚÆßÎ»µ½µÚÊ®Î»£º³öÉúÄê
+	int bit7_10 = rand() % 120 + 1900; //ç¬¬ä¸ƒä½åˆ°ç¬¬åä½ï¼šå‡ºç”Ÿå¹´
 	int bit7 = bit7_10 / 1000;
 	int bit8 = (bit7_10 - bit7_10 / 1000 * 1000) / 100;
 	int bit9 = (bit7_10 - bit7 * 1000 - bit8 * 100) / 10;
 	int bit10 = bit7_10 - bit7 * 1000 - bit8 * 100 - bit9 * 10;
-	int bit11_12 = rand() % 12 + 1; //µÚÊ®Ò»Î»µ½µÚÊ®¶þÎ»£º³öÉúÔÂ
+	int bit11_12 = rand() % 12 + 1; //ç¬¬åä¸€ä½åˆ°ç¬¬åäºŒä½ï¼šå‡ºç”Ÿæœˆ
 	int bit11 = bit11_12 / 10;
 	int bit12 = bit11_12 - bit11 * 10;
-	int bit13_14; //µÚÊ®ÈýÎ»µ½µÚÊ®ËÄÎ»£º³öÉúÈÕ
+	int bit13_14; //ç¬¬åä¸‰ä½åˆ°ç¬¬åå››ä½ï¼šå‡ºç”Ÿæ—¥
 	if (ifleapyear(bit7_10))
 		bit13_14 = rand() % 29 + 1;
 	else
@@ -269,10 +269,10 @@ void Event5() //´æÔÚ¾ÖÏÞÐÔ£¡
 	}
 	int bit13 = bit13_14 / 10;
 	int bit14 = bit13_14 - bit13 * 10;
-	int bit17 = rand() % 9 + 1; //µÚÊ®ÆßÎ»£ºË³ÐòÂë£¨ÆæÄÐÅ¼Å®£©
-	int bitArr[17] = { bit1,bit2,0,1,0,1,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,0,0,bit17 }; //µÚÊ®°ËÎ»£ºÐ£ÑéÂë
-	int checkArr[17] = { 7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2 }, sum = 0; //checkArrÊÇÎ»È¨ÖµÊý×é£¬sumÊÇ×ÜºÍ
-	for (int i = 0; i < 17; i++) //Ç°17Î»µÄÎ»È¨ÖµÏà¼Ó
+	int bit17 = rand() % 9 + 1; //ç¬¬åä¸ƒä½ï¼šé¡ºåºç ï¼ˆå¥‡ç”·å¶å¥³ï¼‰
+	int bitArr[17] = { bit1,bit2,0,1,0,1,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,0,0,bit17 }; //ç¬¬åå…«ä½ï¼šæ ¡éªŒç 
+	int checkArr[17] = { 7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2 }, sum = 0; //checkArræ˜¯ä½æƒå€¼æ•°ç»„ï¼Œsumæ˜¯æ€»å’Œ
+	for (int i = 0; i < 17; i++) //å‰17ä½çš„ä½æƒå€¼ç›¸åŠ 
 		sum += checkArr[i] * bitArr[i];
 	char bit18;
 	switch (sum % 11)
@@ -295,20 +295,20 @@ void Event5() //´æÔÚ¾ÖÏÞÐÔ£¡
 void Event5Interaction()
 {
 	system("cls");
-	printf("¾¯¸æ£ºÈí¼þÖø×÷Õß²»ÎªÓÃ»§Ê¹ÓÃÈí¼þÔì³ÉµÄÈÎºÎºó¹û¸ºÔð¡£Ê¹ÓÃÔòÊÓÎªÄúÖªÏþ²¢Í¬Òâ¸ÃÐ­Òé¡£\nÇëÊäÈëÄãÒªÉú³ÉµÄ¸öÊý£¬È»ºó°´»Ø³µ¡£\n");
+	printf("è­¦å‘Šï¼šè½¯ä»¶è‘—ä½œè€…ä¸ä¸ºç”¨æˆ·ä½¿ç”¨è½¯ä»¶é€ æˆçš„ä»»ä½•åŽæžœè´Ÿè´£ã€‚ä½¿ç”¨åˆ™è§†ä¸ºæ‚¨çŸ¥æ™“å¹¶åŒæ„è¯¥åè®®ã€‚\nè¯·è¾“å…¥ä½ è¦ç”Ÿæˆçš„ä¸ªæ•°ï¼Œç„¶åŽæŒ‰å›žè½¦ã€‚\n");
 	gets(userInput);
 	if (atoi(userInput) > 0 && atoi(userInput) < 65536)
-		printf("½á¹û£º\n");
+		printf("ç»“æžœï¼š\n");
 	else
 	{
 		system("cls");
-		printf("·Ç·¨²ÎÊý£¡\n");
+		printf("éžæ³•å‚æ•°ï¼\n");
 		system("pause");
 		Event5Interaction();
 	}
 	for (int i = 0; i < atoi(userInput); i++)
 		Event5();
-	printf("\nÊÇ·ñÒªÔÙ´Î½øÐÐ¸ÃÏî£¿ÇëÊäÈëY²¢°´»Ø³µ¼ü¡£\nÈôÐèÒª·µ»ØÖ÷½çÃæ£¬Ö±½Ó°´»Ø³µ¼ü¼´¿É¡£\n");
+	printf("\næ˜¯å¦è¦å†æ¬¡è¿›è¡Œè¯¥é¡¹ï¼Ÿè¯·è¾“å…¥Yå¹¶æŒ‰å›žè½¦é”®ã€‚\nè‹¥éœ€è¦è¿”å›žä¸»ç•Œé¢ï¼Œç›´æŽ¥æŒ‰å›žè½¦é”®å³å¯ã€‚\n");
 	gets(userInput);
 	switch (userInput[0])
 	{
