@@ -1,4 +1,4 @@
-//Ver. 22.1.23
+//Ver. 22.1.27
 //Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
@@ -132,28 +132,29 @@ int ftrs(int n)
 	return sum;
 }
 
+int gcd2(int a, int b)
+{
+	int i = a;
+	if (a < b)
+		i = b;
+	if (!a && !b)
+		return 0;
+	else if (!a || !b)
+		return a + b;
+	else
+		for (; i <= a || i <= b; i--)
+			if (!(a % i) && !(b % i))
+				return i;
+}
+
 int gcd(int n, ...)
 {
 	va_list valist;
 	va_start(valist, n);
-	int gcd = 1;
-	for (int c = 0; c < n; c++)
-	{
-		int a = va_arg(valist, int), b = gcd;
-		{
-			int i = a;
-			if (a < b)
-				i = b;
-			if (!a && !b)
-				gcd = 0;
-			else if (!a || !b)
-				gcd = a + b;
-			else
-				for (; i <= a || i <= b; i--)
-					if (!(a % i) && !(b % i))
-						gcd = i;
-		}
-	}
+	int gcd = gcd2(va_arg(valist, int), va_arg(valist, int));
+	for (int c = 0; c < n - 2; c++)
+		gcd = gcd2(gcd, va_arg(valist, int));
+	va_end(valist);
 	return gcd;
 }
 
@@ -183,6 +184,17 @@ int lcm2(int a, int b)
 		for (int i = 1; i <= a * b; i++)
 			if (!(i % a) && !(i % b))
 				return i;
+}
+
+int lcm(int n, ...)
+{
+	va_list valist;
+	va_start(valist, n);
+	int lcm = lcm2(va_arg(valist, int), va_arg(valist, int));
+	for (int c = 0; c < n - 2; c++)
+		lcm = lcm2(lcm, va_arg(valist, int));
+	va_end(valist);
+	return lcm;
 }
 
 void layfbnc(int n)
