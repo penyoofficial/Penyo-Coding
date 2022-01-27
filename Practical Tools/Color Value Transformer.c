@@ -1,4 +1,4 @@
-//Copyright (c) Penyo. All rights reserved. 
+//Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,12 +8,12 @@ long double C, M, Y, K, R, G, B;
 void toCMYK()
 {
 	system("cls");
-	printf("请输入一个RGB类型的颜色值：");
+	printf("Input a RGB color value:");
 	scanf("%lf %lf %lf", &R, &G, &B);
 	if (!((R >= 0 && R <= 255) && (G >= 0 && G <= 255) && (B >= 0 && B <= 255)))
 	{
 		system("cls");
-		printf("您输入了一个非法值！\n");
+		printf("Invalid value!\n");
 		system("pause");
 		toCMYK();
 	}
@@ -39,12 +39,12 @@ void toCMYK()
 void toRGB()
 {
 	system("cls");
-	printf("请输入一个CMYK类型的颜色值：");
+	printf("Input a CMYK color value:");
 	scanf("%lf %lf %lf %lf", &C, &M, &Y, &K);
 	if (!((C >= 0 && C <= 100) && (M >= 0 && M <= 100) && (Y >= 0 && Y <= 100) && (K >= 0 && K <= 100)))
 	{
 		system("cls");
-		printf("您输入了一个非法值！\n");
+		printf("Invalid value!\n");
 		system("pause");
 		toRGB();
 	}
@@ -63,7 +63,7 @@ void toRGB()
 int main()
 {
 	system("cls");
-	printf("欢迎使用颜色值转换器！此处使用的转换算法基于Adobe指定的相关标准编写。\n请选择需要的转换模式：\n[ C ] CMYK to RGB   [ R ] RGB to CMYK\n");
+	printf("Welcome using Color Value Transformer! Choose the mode you need:\n[ C ] CMYK to RGB   [ R ] RGB to CMYK\n");
 	char userChoice[512];
 	gets(userChoice);
 	if (userChoice[0] == 'C' || userChoice[0] == 'c')
@@ -73,14 +73,14 @@ int main()
 	else if (userChoice[0] == 'i')
 	{
 		system("cls");
-		printf("Copyright (c) Penyo. All rights reserved. \n");
+		printf("Copyright (c) Penyo. All rights reserved.\n");
 		system("pause");
 		main();
 	}
 	else
 	{
 		system("cls");
-		printf("您选了一个非法选项！\n");
+		printf("Invalid choice!\n");
 		system("pause");
 		main();
 	}
