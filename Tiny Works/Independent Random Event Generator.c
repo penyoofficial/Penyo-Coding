@@ -231,11 +231,11 @@ int ifleapyear(int year)
 	}
 }
 
-void Event5() //存在局限性！
+void Event5() // 存在局限性！
 {
 	Seed();
-	int bit1 = rand() % 6 + 1; //第一位：地区
-	int bit2; //第二位：省
+	int bit1 = rand() % 6 + 1; // 第一位：地区
+	int bit2; // 第二位：省
 	switch (bit1)
 	{
 	case 1:bit2 = rand() % 5 + 1; break;
@@ -244,18 +244,18 @@ void Event5() //存在局限性！
 	case 4:bit2 = rand() % 6 + 1; break;
 	case 5:bit2 = rand() % 5 + 0; break;
 	case 6:bit2 = rand() % 5 + 1; break;
-		//case 7:bit2 = rand() % 1 + 1; break;
-		//case 8:bit2 = rand() % 2 + 1;
+		// case 7:bit2 = rand() % 1 + 1; break;
+		// case 8:bit2 = rand() % 2 + 1;
 	}
-	int bit7_10 = rand() % 120 + 1900; //第七位到第十位：出生年
+	int bit7_10 = rand() % 120 + 1900; // 第七位到第十位：出生年
 	int bit7 = bit7_10 / 1000;
 	int bit8 = (bit7_10 - bit7_10 / 1000 * 1000) / 100;
 	int bit9 = (bit7_10 - bit7 * 1000 - bit8 * 100) / 10;
 	int bit10 = bit7_10 - bit7 * 1000 - bit8 * 100 - bit9 * 10;
-	int bit11_12 = rand() % 12 + 1; //第十一位到第十二位：出生月
+	int bit11_12 = rand() % 12 + 1; // 第十一位到第十二位：出生月
 	int bit11 = bit11_12 / 10;
 	int bit12 = bit11_12 - bit11 * 10;
-	int bit13_14; //第十三位到第十四位：出生日
+	int bit13_14; // 第十三位到第十四位：出生日
 	if (ifleapyear(bit7_10))
 		bit13_14 = rand() % 29 + 1;
 	else
@@ -269,10 +269,10 @@ void Event5() //存在局限性！
 	}
 	int bit13 = bit13_14 / 10;
 	int bit14 = bit13_14 - bit13 * 10;
-	int bit17 = rand() % 9 + 1; //第十七位：顺序码（奇男偶女）
-	int bitArr[17] = { bit1,bit2,0,1,0,1,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,0,0,bit17 }; //第十八位：校验码
-	int checkArr[17] = { 7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2 }, sum = 0; //checkArr是位权值数组，sum是总和
-	for (int i = 0; i < 17; i++) //前17位的位权值相加
+	int bit17 = rand() % 9 + 1; // 第十七位：顺序码（奇男偶女）
+	int bitArr[17] = { bit1,bit2,0,1,0,1,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,0,0,bit17 }; // 第十八位：校验码
+	int checkArr[17] = { 7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2 }, sum = 0; // checkArr是位权值数组，sum是总和
+	for (int i = 0; i < 17; i++) // 前17位的位权值相加
 		sum += checkArr[i] * bitArr[i];
 	char bit18;
 	switch (sum % 11)
