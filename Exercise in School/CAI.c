@@ -1,16 +1,16 @@
-//Copyright (c) Penyo. All rights reserved.
+// Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
-#define POINT_SINGLE 1 //Define single question score
-#define POINT_LEVELUP 4 //Define the qualifying score
-#define MOUNT_UPPER 5 //Define the number of questions per level
+#define POINT_SINGLE 1 // Define single question score
+#define POINT_LEVELUP 4 // Define the qualifying score
+#define MOUNT_UPPER 5 // Define the number of questions per level
 
 struct state {
-	char mode[128 - 4 * 4]; //User selected mode
-	int level, score, mount, chance; //Level, the level score, this question wrong times and the number of questions answered
+	char mode[128 - 4 * 4]; // User selected mode
+	int level, score, mount, chance; // Level, the level score, this question wrong times and the number of questions answered
 }player;
 
 void Menu(), NumGenerator(), Interactor(int a, int b);
@@ -22,7 +22,7 @@ int main()
 	Menu();
 }
 
-void Menu() //Main interface
+void Menu() // Main interface
 {
 	system("cls");
 	printf("\n\
@@ -41,16 +41,16 @@ void Menu() //Main interface
                         输入 4 进入除法模式\n\n\
                             ___________\b\b\b\b\b", POINT_SINGLE, MOUNT_UPPER, POINT_LEVELUP, POINT_LEVELUP);
 	scanf("%s", player.mode);
-	while ((player.mode[1] = getchar()) != '\n'); //Clear cache
+	while ((player.mode[1] = getchar()) != '\n'); // Clear cache
 	NumGenerator();
 }
 
-void NumGenerator() //Generation module
+void NumGenerator() // Generation module
 {
-	int a, b; //Operand
+	int a, b; // Operand
 	system("cls");
 	srand(time(NULL));
-	if (player.level == 1) //Level verification
+	if (player.level == 1) // Level verification
 		a = rand() % 10, b = rand() % 10;
 	else if (player.level == 2)
 		a = rand() % 90 + 10, b = rand() % 90 + 10;
@@ -60,28 +60,28 @@ void NumGenerator() //Generation module
 		system("pause");
 		exit(0);
 	}
-	if ((player.mode[0] == '2' && a - b < 0) || (player.mode[0] == '4' && a % b != 0)) //Validity verification
+	if ((player.mode[0] == '2' && a - b < 0) || (player.mode[0] == '4' && a % b != 0)) // Validity verification
 		NumGenerator();
 	Interactor(a, b);
 }
 
-void Interactor(int a, int b) //Interactive module
+void Interactor(int a, int b) // Interactive module
 {
-	char chOrigin[128]; //Unprocessed user input result
-	int ch = EOF; //Processed user input results
+	char chOrigin[128]; // Unprocessed user input result
+	int ch = EOF; // Processed user input results
 	system("cls");
-	if (player.score >= POINT_LEVELUP) //Promotion verification
+	if (player.score >= POINT_LEVELUP) // Promotion verification
 	{
 		player.level++, player.score = 0, player.mount = 0;
 		NumGenerator();
 	}
-	if (player.score < POINT_LEVELUP && player.mount >= MOUNT_UPPER) //Failure verification
+	if (player.score < POINT_LEVELUP && player.mount >= MOUNT_UPPER) // Failure verification
 	{
 		printf("好好学习吧！\n");
 		system("pause");
 		exit(0);
 	}
-	if (player.chance >= 5) //Error count verification
+	if (player.chance >= 5) // Error count verification
 	{
 		player.mount++, player.chance = 0;
 		NumGenerator();
@@ -105,7 +105,7 @@ void Interactor(int a, int b) //Interactive module
 	gets(chOrigin);
 	if (atof(chOrigin) >= 0 && atof(chOrigin) <= 99 * 99)
 		ch = atof(chOrigin);
-	if (Calc(a, b) == ch) //Extra points or retest verification
+	if (Calc(a, b) == ch) // Extra points or retest verification
 	{
 		player.score += POINT_SINGLE, player.mount++, player.chance = 0;
 		NumGenerator();
@@ -117,7 +117,7 @@ void Interactor(int a, int b) //Interactive module
 	}
 }
 
-int Calc(int a, int b) //Calculation module
+int Calc(int a, int b) // Calculation module
 {
 	switch (player.mode[0])
 	{
