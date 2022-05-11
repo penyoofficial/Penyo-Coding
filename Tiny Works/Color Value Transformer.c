@@ -1,4 +1,4 @@
-//Copyright (c) Penyo. All rights reserved.
+// Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
 #include <stdlib.h>
