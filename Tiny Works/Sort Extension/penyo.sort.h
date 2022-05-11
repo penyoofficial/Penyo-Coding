@@ -10,8 +10,9 @@ void swap(int* a, int* b)
 	*b = temp;
 }
 
-void bubble(int arr[], int len)
+void bubble(int arr[])
 {
+	int len = sizeof(arr) / sizeof(arr[0]);
 	for (int i = 0; i < len - 1; i++)
 		for (int j = 0, temp; j < len - 1 - i; j++)
 			if (arr[j] > arr[j + 1])
@@ -22,8 +23,9 @@ void bubble(int arr[], int len)
 			}
 }
 
-void selection(int arr[], int len)
+void selection(int arr[])
 {
+	int len = sizeof(arr) / sizeof(arr[0]);
 	for (int i = 0; i < len - 1; i++)
 	{
 		int min = i;
@@ -36,8 +38,9 @@ void selection(int arr[], int len)
 	}
 }
 
-void insertion(int arr[], int len)
+void insertion(int arr[])
 {
+	int len = sizeof(arr) / sizeof(arr[0]);
 	for (int i = 1; i < len; i++)
 	{
 		int key = arr[i], j = i - 1;
