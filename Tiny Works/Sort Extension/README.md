@@ -5,9 +5,9 @@
 函数原型|功能描述|开发日志
 -|-|-
 void swap(int* a, int* b)|交换a与b的地址
-void bubble(int arr[], int len)|对长度为len的数组arr**冒泡排序**
-void selection(int arr[], int len)|对长度为len的数组arr**选择排序**
-void insertion(int arr[], int len)|对长度为len的数组arr**插入排序**
+void bubble(int arr[])|对数组arr**冒泡排序**
+void selection(int arr[])|对数组arr**选择排序**
+void insertion(int arr[])|对数组arr**插入排序**
 
 ---
 
