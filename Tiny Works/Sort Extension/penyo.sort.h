@@ -1,5 +1,5 @@
-//Ver. 21.12.21
-//Copyright (c) Penyo. All rights reserved.
+// Ver. 21.12.21
+// Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
 
