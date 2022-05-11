@@ -1,5 +1,5 @@
-//Ver. 22.1.27
-//Copyright (c) Penyo. All rights reserved.
+// Ver. 22.1.27
+// Copyright (c) Penyo. All rights reserved.
 
 #include <stdio.h>
 #include <math.h>
@@ -234,7 +234,7 @@ void layncst(int lb, int ub)
 		b10 = (num - b100 * 100) / 10;
 		b1 = num % 10;
 		if (num == b100 * b100 * b100 + b10 * b10 * b10 + b1 * b1 * b1)
-			printf("%d ", num);;
+			printf("%d ", num);
 	}
 }
 
