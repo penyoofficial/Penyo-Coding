@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: random-event-generator
+appId: com.penyo.random.event.generator
+productName: 随机事件生成器
 directories:
   buildResources: build
 files:

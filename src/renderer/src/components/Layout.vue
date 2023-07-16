@@ -14,23 +14,6 @@ interface EventType {
 }
 
 export default {
-  data(): {
-    /** 事件类型 */
-    eventTypes: EventType[],
-    /** 所选中的事件 */
-    chosenEvent: EventType["name"]
-  } {
-    return {
-      eventTypes: [
-        { displayName: "硬币抛掷", name: "CoinThrower" },
-        { displayName: "骰子抛掷", name: "DiceThrower" },
-        { displayName: "扑克牌抽取", name: "PokerPicker" },
-        { displayName: "双色球号码生成", name: "UnionLottoCodeGenerator" },
-        { displayName: "身份证号码生成", name: "IDCodeGenerator" },
-      ],
-      chosenEvent: "0"
-    }
-  },
   components: {
     ElRow,
     ElCol,
@@ -41,6 +24,23 @@ export default {
     PokerPicker,
     UnionLottoCodeGenerator,
     IDCodeGenerator
+  },
+  data(): {
+    /** 事件类型 */
+    eventTypes: EventType[]
+    /** 所选中的事件 */
+    chosenEvent: EventType['name']
+  } {
+    return {
+      eventTypes: [
+        { displayName: '硬币抛掷', name: 'CoinThrower' },
+        { displayName: '骰子抛掷', name: 'DiceThrower' },
+        { displayName: '扑克牌抽取', name: 'PokerPicker' },
+        { displayName: '双色球号码生成', name: 'UnionLottoCodeGenerator' },
+        { displayName: '身份证号码生成', name: 'IDCodeGenerator' }
+      ],
+      chosenEvent: '0'
+    }
   },
   methods: {
     changeEvent(index: string) {
@@ -53,7 +53,7 @@ export default {
 <template>
   <el-row>
     <el-col :span="6">
-      <el-menu id="e-selector" @select="changeEvent" :default-active="chosenEvent">
+      <el-menu id="e-selector" :default-active="chosenEvent" @select="changeEvent">
         <el-menu-item v-for="(et, i) in eventTypes" :index="`${i}`">
           <span>{{ et.displayName }}</span>
         </el-menu-item>

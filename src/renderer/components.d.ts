@@ -20,7 +20,6 @@ declare module 'vue' {
     ElText: typeof import('element-plus/es')['ElText']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
-    EventInjector: typeof import('./src/components/EventInjector.vue')['default']
     Layout: typeof import('./src/components/Layout.vue')['default']
   }
 }
