@@ -61,7 +61,9 @@ export default {
     </el-col>
     <el-col :span="18">
       <div id="main-op-area">
-        <component :is="eventTypes[parseInt(chosenEvent)].name"></component>
+        <keep-alive>
+          <component :is="eventTypes[parseInt(chosenEvent)].name"></component>
+        </keep-alive>
       </div>
     </el-col>
   </el-row>

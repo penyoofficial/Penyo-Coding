@@ -1,6 +1,6 @@
 {
   "name": "random-event-generator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple toolbox which can simulate the results of random event.",
   "main": "./out/main/index.js",
   "author": "Penyo",
